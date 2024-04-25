@@ -1,7 +1,7 @@
 'use strict';
 
 
-const secretNumber = Math.trunc(Math.random() * 20 ) + 1;
+let secretNumber = Math.trunc(Math.random() * 20 ) + 1;
 
 let score = 20;
 let highscore = 0;
@@ -17,7 +17,8 @@ document.querySelector('.check'),addEventListener('click', function() {
     }
     else if(guess === secretNumber){
         document.querySelector('.message').textContent = '🎉🎉WOOOOOOO PERFECT';
-        document.querySelector('body').style.backgroundColor = '#60b347'
+        document.querySelector('body').style.backgroundColor = '#dcffd2'
+        document.querySelector('.number').textContent = secretNumber;
 
         if (score > highscore) {
             highscore = score;
@@ -36,7 +37,7 @@ document.querySelector('.check'),addEventListener('click', function() {
         } 
     }
     else if (guess > secretNumber){
-        i   f ( score > 1 ){
+        if ( score > 1 ){
             document.querySelector('.message').textContent = '📈noo it is to hight';
             score--;
             document.querySelector('.score').textContent = score;
@@ -49,18 +50,18 @@ document.querySelector('.check'),addEventListener('click', function() {
     }
 }) 
 
-document.querySelector('.again').addEventListener('click', function()){
+document.querySelector('.again').addEventListener('click', function(){
     secretNumber = Math.trunc(Math.random() * 20 ) + 1;
-    let score = 20;
+    score = 20;
 
     document.querySelector('.message').textContent = 'start again';
     document.querySelector('.score').textContent = score;
     document.querySelector('.number').textContent = '?';
     document.querySelector('.guess').value = '';
 
-    document.querySelector('body').style.backgroundColor = '#ffaee3'
+    document.querySelector('body').style.backgroundColor = '#ffbfe9'
 
-}
+});
 
 
 
